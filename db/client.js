@@ -1,5 +1,8 @@
-import pg from "pg";
-const db = new pg.Client(process.env.DATABASE_URL);
-export default db;
+import pkg from "pg";
+const { Client } = pkg;
 
-aswdawda
+const client = new Client({
+  connectionString: process.env.DATABASE_URL || "postgres://localhost:5432/market"
+});
+
+export default client;
